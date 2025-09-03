@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Chat · Flask Chat{% endblock %}
+{% block head %}
+<script defer src="{{ url_for('static', filename='js/chat.js') }}"></script>
+{% endblock %}
+{% block content %}
+<section class="grid">
+  <div class="card">
+    <h2>Rooms</h2>
+    <form id="room-form">
+      <input id="room-input" placeholder="room name (e.g. general, python, india)" />
+      <button class="btn" type="submit">Join</button>
+      <button class="btn warn" id="leave-btn" type="button">Leave</button>
+    </form>
+    <ul id="rooms" class="pill-list">
+      <li class="pill active" data-room="general">#general</li>
+    </ul>
+  </div>
+
+  <div class="card chat">
+    <div id="messages" class="messages"></div>
+    <div class="compose">
+      <input id="message-input" placeholder="Type a message…" autocomplete="off" />
+      <button id="send-btn" class="btn primary">Send</button>
+    </div>
+    <div id="typing" class="typing hide"></div>
+  </div>
+</section>
+
+<script>
+  window.CHAT = {
+    username: "{{ username|e }}",
+    initialRoom: "general"
+  };
+</script>
+{% endblock %}

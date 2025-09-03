@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Login · Flask Chat{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>Login</h1>
+  <form method="post">
+    <label>Username</label>
+    <input name="username" placeholder="e.g. amit_k" required />
+    <button type="submit" class="btn primary">Enter Chat</button>
+  </form>
+</section>
+{% endblock %}
