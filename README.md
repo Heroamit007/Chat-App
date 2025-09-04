@@ -24,6 +24,12 @@ It also supports **Docker** for containerized deployment.
 - **Deployment:** Docker  
 
 ---
+py -m venv .venv
+.venv\Scripts\activate   # On Windows
+source .venv/bin/activate   # On Linux/Mac
+
+pip install -r requirements.txt
+
 
 ## 📦 Installation  
 
@@ -31,3 +37,6 @@ It also supports **Docker** for containerized deployment.
 ```bash
 git clone https://github.com/Heroamit007/Chat-App.git
 cd Chat-App
+
+py app.py
+docker build -t chatapp .
